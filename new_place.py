@@ -22,27 +22,27 @@ def location_descriptions():
     else:
         print(red("Place not found in training data"))
         time.sleep(3)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         user_query();
 
 def ultimatum():
     ult = input(green("Would you like to teach me more? (yes/no): "))
     if ult == "yes":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         new_place();
     elif ult == "no":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(green("Okay then!"))
         time.sleep(1)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         round2 = input(green("Would you like to know the descriptions of other places? (yes/no): "))
         if round2 == "yes":
             location_descriptions();
         elif round2 == "no":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(green("Okay then!"))
             time.sleep(1)
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             with open("places.txt", "w") as pf:
                 pf.write("\n".join(places))
             with open("place_descs.txt", "w") as df:
@@ -51,21 +51,21 @@ def ultimatum():
         else:
             print(red("Invalid input, please try again."))
             time.sleep(3)
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             ultimatum();
     else:
         print(red("Invalid input, please try again."))
         time.sleep(3)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         ultimatum();
 
 def user_query():
         Uques = input(green("Would you like to explain another place to me? (yes/no): "))
         if Uques == "yes":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             new_place();
         elif Uques == "no":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             location_descriptions();
         else:
             print(red("Invalid input, please try again."))
@@ -96,5 +96,5 @@ def new_place():
     training_desc = input(green("What is a good description of this place?: "))
     places.append(training_places)
     descriptions.append(training_desc)
-    os.system('clear');
+    os.system('cls' if os.name == 'nt' else 'clear')
     user_query();

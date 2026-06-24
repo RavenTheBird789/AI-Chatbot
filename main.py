@@ -19,13 +19,13 @@ def bold(text: str) -> str:
 def user_prompt():
     prompt = input(green("Would you like to return to the main menu? (yes/no): "))
     if prompt == "yes":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         options()
     elif prompt == "no":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(green("Okay then! thanks for teaching me things!"))
         time.sleep(5)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         return;
 
 art = """
@@ -71,27 +71,27 @@ def options():
         new_word.new_word();
         time.sleep(3)
         user_prompt()
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
     elif selection == '2':
         new_sound.new_sound();
         time.sleep(3)
         user_prompt()
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
     elif selection == '3':
         new_place.new_place();
         time.sleep(3)
         user_prompt()
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
     elif selection == '4':
-        os.system('clear');
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(green("Thank you for taking the time to speak to me."));
         time.sleep(5)
-        os.system('clear');
+        os.system('cls' if os.name == 'nt' else 'clear')
         os.close(fd=0);
     else:
-        os.system('clear');
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(red("Invalid Input, please try again."));
         time.sleep(3)
-        os.system('clear');
+        os.system('cls' if os.name == 'nt' else 'clear')
         options();
 options();

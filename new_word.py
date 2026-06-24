@@ -22,27 +22,27 @@ def word_definitions():
     else:
         print(red("Word not found in training data"))
         time.sleep(3)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         user_query();
 
 def ultimatum():
     ult = input(green("Would you like to teach me more? (yes/no): "))
     if ult == "yes":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         new_word();
     elif ult == "no":
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(green("Okay then!"))
         time.sleep(1)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         round2 = input(green("Would you like to know the definition of other words? (yes/no): "))
         if round2 == "yes":
             word_definitions();
         elif round2 == "no":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(green("Okay then!"))
             time.sleep(1)
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             with open("words.txt", "w") as wf:
                 wf.write("\n".join(words))
             with open("word_defs.txt", "w") as df:
@@ -51,21 +51,21 @@ def ultimatum():
         else:
             print(red("Invalid input, please try again."))
             time.sleep(3)
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             ultimatum();
     else:
         print(red("Invalid input, please try again."))
         time.sleep(3)
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         ultimatum();
 
 def user_query():
         Uques = input(green("Would you like to teach me another word? (yes/no): "))
         if Uques == "yes":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             new_word();
         elif Uques == "no":
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             word_definitions();
         else:
             print(red("Invalid input, please try again."))
@@ -96,5 +96,5 @@ def new_word():
     training_def = input(green("What is the definition of this word?: "))
     words.append(training_word)
     definitions.append(training_def)
-    os.system('clear');
+    os.system('cls' if os.name == 'nt' else 'clear')
     user_query();
